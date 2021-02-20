@@ -12,7 +12,7 @@ int main(){
 		prov(word);
 		p = Find (Head, word); // ищем слово в списке
 		if (p != NULL){ // если нашли слово,
-			p->count++; // увеличить счетчик
+			p->count; // увеличить счетчик
 			if(p->count >= max){
 				max = p->count;
 			}
@@ -25,7 +25,7 @@ int main(){
 	in.close();
 	p = Head;
 	out.open("output.txt");
-	for(int i = max; i > 0; i--){
+	for(int i = max; i > 0; --i){
 		p = Head;
 		if (cc >= 100){
 			break;
@@ -34,7 +34,7 @@ int main(){
 			if(cc <= 100){
 				if(p->count == i){
 					out << p->word << " - " << p->count << "\n"; 
-					cc++;
+					++cc;
 				}
 			}else{
 				break;
