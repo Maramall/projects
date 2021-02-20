@@ -17,5 +17,6 @@ void AddBefore(PNode &Head, PNode p, PNode NewNode);
 void AddLast(PNode &Head, PNode NewNode);
 PNode Find (PNode Head, string NewWord);
 PNode FindPlace (PNode Head, string NewWord);
+void DeleteNode(PNode &Head, PNode OldNode);
 
 #endif
