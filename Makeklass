@@ -1,0 +1,13 @@
+all: klass
+	
+klass: klass.o node.o search.o
+	g++ klass.o node.o search.o -o klass
+
+klass.o: klass.cpp
+	g++ -c klass.cpp
+node.o: node.cpp
+	g++ -c node.cpp
+search.o: search.cpp
+	g++ -c search.cpp
+clean:
+	rm -rf *.o klass
