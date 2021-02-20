@@ -7,33 +7,7 @@ PNode CreateNode (string nword){
 	NewNode->next = NULL;
 	return NewNode;
 }
-void prov(string &a){
-	int l = a.length();
-	for (int i = 0; i < l; ++i){
-		if(a[i] == '.'){ 
-			a.erase(i,1);
-		}
-		if(a[i] == ','){ 
-			a.erase(i,1);
-		}
-		if(a[i] == '?'){ 
-			a.erase(i,1);
-		}
-		if(a[i] == '!'){ 
-			a.erase(i,1);
-		}
-		if(a[i] == '"'){ 
-			a.erase(i,1);
-		}
-		if(a[i] == '('){ 
-			a.erase(i,1);
-		}
-		if(a[i] == ')'){ 
-			a.erase(i,1);
-	
-		}
-	}
-}
+
 void AddFirst (PNode &Head, PNode NewNode){ // добавление в начало списка
 	NewNode->next = Head;
 	Head = NewNode;
@@ -50,7 +24,7 @@ void AddBefore(PNode &Head, PNode p, PNode NewNode) // добавление уз
 		AddFirst(Head, NewNode); // вставка перед первым узлом
 		return;
 	}
-	while (q && q->next != p){ // ищем узел, за которым следует p
+	while (q && q->next!=p){ // ищем узел, за которым следует p
 		q = q->next;
 	}
 	if (q){ // если нашли такой узел,
@@ -90,9 +64,39 @@ void DeleteNode(PNode &Head, PNode OldNode){
 		while(q && q->next != OldNode){
 			q = q->next;
 		}
-		if(q == NULL) return;
+		if(q == NULL){
+			return;
+		}
 		q->next = OldNode->next;
 		}
 	delete OldNode;
 	
+}
+
+void prov(string &a){
+	int l = a.length();
+	for (int i = 0; i < l; ++i){
+		if(a[i] =='.'){ 
+			a.erase(i,1);
+		}
+		if(a[i] ==','){ 
+			a.erase(i,1);
+		}
+		if(a[i] =='?'){ 
+			a.erase(i,1);
+		}
+		if(a[i] =='!'){ 
+			a.erase(i,1);
+		}
+		if(a[i] == '"'){ 
+			a.erase(i,1);
+		}
+		if(a[i] == '('){ 
+			a.erase(i,1);
+		}
+		if(a[i] == ')'){ 
+			a.erase(i,1);
+	
+		}
+	}
 }

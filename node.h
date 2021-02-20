@@ -2,9 +2,11 @@
 #define node_H
 #include <bits/stdc++.h>
 using namespace std;
-
+// односвязный список:
 struct Node {
 	string word;
+	string name;
+	string fam;
 	int count;
 	Node *next; 
 };
@@ -18,5 +20,9 @@ void AddLast(PNode &Head, PNode NewNode);
 PNode Find (PNode Head, string NewWord);
 PNode FindPlace (PNode Head, string NewWord);
 void DeleteNode(PNode &Head, PNode OldNode);
-
+//фунуции для klass.cpp
+int search(string input);
+bool ex(int a, PNode &q);
+PNode CreateNFNode (string name, string fam);
+PNode FindF (PNode Head, string NewWord);
 #endif
