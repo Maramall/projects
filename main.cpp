@@ -12,7 +12,7 @@ int main(){
 		prov(word);
 		p = Find (Head, word); // ищем слово в списке
 		if (p != NULL){ // если нашли слово,
-			p->count; // увеличить счетчик
+			p->count++; // увеличить счетчик
 			if(p->count >= max){
 				max = p->count;
 			}
