@@ -13,6 +13,9 @@ void prov(string &a){
 		if(a[i] == '.'){ 
 			a.erase(i,1);
 		}
+		if(a[i] == '-'){ 
+			a.erase(i,1);
+		}
 		if(a[i] == ','){ 
 			a.erase(i,1);
 		}
